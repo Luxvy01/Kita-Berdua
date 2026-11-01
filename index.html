@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perjalanan Kita</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="welcomeScreen" class="welcome-overlay">
+      <div class="welcome-content">
+        <h1 id="typingText" class="fade-text">Website Kita</h1>
+        <p id="subText" class="fade-text-sub">Tempat menyimpan cerita kita.</p>
+        <button class="btn-open" onclick="enterWebsite()">
+          Lihat Cerita Kita
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-fixed"></div>
+    <div class="star-overlay"></div>
+
+    <main id="mainContent" class="hidden-content">
+      <section class="hero active">
+        <div class="hero-content">
+          <h1>Us, in Time.</h1>
+          <p class="subtitle">
+            Setiap detik yang berlalu adalah cerita milik kita.
+          </p>
+
+          <div class="timer-wrapper">
+            <div class="time-segment">
+              <span id="days">679</span>
+              <span class="label">Hari</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-segment">
+              <span id="hours">16</span>
+              <span class="label">Jam</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-segment">
+              <span id="minutes">00</span>
+              <span class="label">Menit</span>
+            </div>
+            <div class="separator">:</div>
+            <div class="time-segment">
+              <span id="seconds">00</span>
+              <span class="label">Detik</span>
+            </div>
+          </div>
+
+          <button
+            onclick="scrollToSection('playlist')"
+            class="scroll-indicator"
+            aria-label="Scroll Down"
+          >
+            <i class="fas fa-arrow-down"></i>
+          </button>
+        </div>
+      </section>
+
+      <section id="playlist" class="section">
+        <div class="section-header reveal">
+          <h2>Lagu Favorit Kita</h2>
+          <p>Melodi yang selalu mengingatkanku padamu</p>
+        </div>
+
+        <div class="track-list reveal">
+          <div
+            id="track-perfect"
+            class="track-item"
+            onclick="playSong('sisarasa')"
+          >
+            <div class="track-icon"><i class="fas fa-play"></i></div>
+            <div class="track-info">
+              <h3>Sisa rasa</h3>
+              <p>Mahalini </p>
+            </div>
+            <div class="track-duration">4:01</div>
+          </div>
+
+          <div
+            id="track-thousand"
+            class="track-item"
+            onclick="playSong('negoroangin')"
+          >
+            <div class="track-icon"><i class="fas fa-play"></i></div>
+            <div class="track-info">
+              <h3>Negoro Angin</h3>
+              <p>Denny Caknan</p>
+            </div>
+            <div class="track-duration">5:08</div>
+          </div>
+
+          <div
+            id="track-allofme"
+            class="track-item"
+            onclick="playSong('heart')"
+          >
+            <div class="track-icon"><i class="fas fa-play"></i></div>
+            <div class="track-info">
+              <h3>Tattoed Heart</h3>
+              <p>Ariana Grande</p>
+            </div>
+            <div class="track-duration">3:16</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="section">
+        <div class="section-header reveal">
+          <h2>Jejak Kisah Kita</h2>
+          <p>
+            Dari "hai" yang sederhana, hingga "jangan pergi" yang penuh makna.
+            Ini adalah garis waktu favoritku.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-box left reveal">
+            <div class="date-badge">20 Desember 2024</div>
+            <div class="box-content">
+              <h3><i class="fas fa-comments"></i> Ajakan Pertamaku</h3>
+              <p>
+                Berawal dari dm Instagram singkat yang canggung. Siapa
+                sangka, mengirim pesan hari itu adalah awal dari skenario
+                terindah yang disiapkan semesta untukku.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-box right reveal">
+            <div class="date-badge">21 Desember 2024</div>
+            <div class="box-content">
+              <h3><i class="fas fa-coffee"></i> Tatap Muka Pertama</h3>
+              <p>
+                Jantung berdebar lebih cepat dari biasanya. Di kedai kopi itu,
+                aku melihat senyummu secara langsung untuk pertama kalinya.
+                Detik itu aku tahu, aku ingin melihat senyum itu setiap hari.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-box left reveal">
+            <div class="date-badge">22 Desember 2024</div>
+            <div class="box-content">
+              <h3><i class="fas fa-heart"></i> Kita Dimulai</h3>
+              <p>
+                Bukan lagi "aku" dan "kamu", tapi "kita". Hari dimana kita
+                sepakat untuk saling menjaga, saling mengerti, dan berjalan
+                beriringan. Tanggal ini akan selalu jadi sandi rahasia kita.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-box right reveal">
+            <div class="date-badge">19 April 2025</div>
+            <div class="box-content">
+              <h3><i class="fas fa-moon"></i> Konser Kita Untuk Pertama Kalinya</h3>
+              <p>
+                Malam itu, kita bernyanyi, melompat setinggi-tingginya, teriak sekencang-kencangnya. Di sana aku sadar, kamu bukan sekadar pacar, tapi
+                juga rumah tempatku pulang dan berbagi segala rasa.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-box left reveal">
+            <div class="date-badge">15 Mei 2025</div>
+            <div class="box-content">
+              <h3>
+                <i class="fas fa-plane-departure"></i> Petualangan Pertama
+              </h3>
+              <p>
+                Matahari terbenam, suara air, dan tawa kita yang lepas.
+                Perjalanan ini mengajarkanku bahwa tujuan destinasi itu tidak
+                penting, asalkan teman perjalanannya adalah kamu.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-box right reveal">
+            <div class="date-badge">22 Desember 2025</div>
+            <div class="box-content">
+              <h3><i class="fas fa-gift"></i> Perayaan Kita</h3>
+              <p>
+                Menikmati makanan bersamamu membuatku merasakan hal yang berbeda. Doaku sederhana:
+                Semoga di tahun-tahun berikutnya, wajahmu lah yang selalu
+                kulihat setiap kali aku membuka mata di hari bahagiaku.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header reveal">
+          <h2>Momen "Kita"</h2>
+        </div>
+        <div class="gallery-container reveal">
+          <div class="polaroid rotate-left">
+            <img
+              src="https://6ae7565e9d12361351a494bf.imgix.net/sandbox/WhatsApp%20Image%202026-11-01%20at%2022.08.27.jpeg"
+              alt="Foto 1"
+            />
+            <div class="caption">Hari Aku Sangat Bangga Padamu</div>
+          </div>
+          <div class="polaroid rotate-right">
+            <img
+              src="https://6ae7565e9d12361351a494bf.imgix.net/sandbox/WhatsApp%20Image%202026-11-01%20at%2022.08.28.jpeg"
+              alt="Foto 2"
+            />
+            <div class="caption">Kota Kelahiranku Bersamamu</div>
+          </div>
+          <div class="polaroid rotate-left">
+            <img
+              src="https://6ae7565e9d12361351a494bf.imgix.net/sandbox/WhatsApp%20Image%202026-11-01%20at%2022.08.27%20(1).jpeg"
+              alt="Foto 3"
+            />
+            <div class="caption">Hunting Cafe lagi dan lagi</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing-section reveal">
+        <div class="closing-content">
+          <h2 class="gradient-text-big">
+            Setiap kenangan kita<br />tersimpan di sini,<br /><span
+              class="highlight-pink"
+              >selamanya</span
+            >
+          </h2>
+
+          <div class="glow-box">
+            <i
+              class="fas fa-heart heart-beat"
+              id="loveIcon"
+              onclick="createHeartShower()"
+            ></i>
+            <p>
+              Terima kasih sudah menjadi bagian dari hidupku. Setiap detik
+              bersamamu adalah hadiah yang tak ternilai.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="music-floater" id="playerBar">
+      <div class="floater-info">
+        <div class="equalizer"><span></span><span></span><span></span></div>
+        <span id="currentSongTitle" class="song-title">Pilih lagu...</span>
+      </div>
+      <button
+        onclick="toggleMusic()"
+        class="btn-control"
+        aria-label="Play Music"
+      >
+        <i class="fas fa-play" id="mainPlayIcon"></i>
+      </button>
+    </div>
+
+    <audio id="myAudio" loop>
+      <source src="myAudio/lagu-kotainitaksamatanpamu.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
